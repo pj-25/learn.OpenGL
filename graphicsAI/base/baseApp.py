@@ -25,6 +25,8 @@ class BaseApp:
         self.clock = pygame.time.Clock()
         self.inputHandler = InputHandler()
 
+        self.timeElapsed = 0
+
     def initialize(self):
         pass
 
@@ -38,6 +40,9 @@ class BaseApp:
             self.inputHandler.update()
             self.isRunning = not self.inputHandler.quit
             
+            self.deltaTime = self.clock.get_time() / 1000
+            self.timeElapsed += self.deltaTime
+
             self.update()
         
             pygame.display.flip()

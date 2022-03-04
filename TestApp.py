@@ -1,4 +1,5 @@
 from turtle import speed
+from math import sin, cos
 from graphicsAI.base.baseApp import BaseApp
 from graphicsAI.base.openGLUtils import OpenGLUtils
 from OpenGL.GL import *
@@ -44,23 +45,17 @@ class TestApp(BaseApp):
 
         print('System Info:', OpenGLUtils.getSystemInfo())
 
-        self.step = 0.02
-        self.slope = 0.6
-
 
     def update(self):
-        glUseProgram(self.programRef)
+        # x=rcos(t)+a, y=rsin(t)+b
+        self.uniTranslation.data[0] = 0.75 * cos(self.timeElapsed)
+        self.uniTranslation.data[1] = 0.75 * sin(self.timeElapsed)
+        
         glClear(GL_COLOR_BUFFER_BIT)
- 
-        if not (-0.97< self.uniTranslation.data[0] < 0.97):
-            self.step = -self.step
-            self.slope = -self.slope
-        elif not (-0.97 < self.uniTranslation.data[1] < 0.97):
-            self.slope = -self.slope
-
-        self.uniTranslation.data[0] += self.step
-        self.uniTranslation.data[1] += self.slope*self.step
+        glUseProgram(self.programRef)
+        
         self.uniTranslation.uploadData()
+        self.vertexColorAttr.uploadDataToBuffer()
 
         glDrawArrays(GL_POINTS, 0, 1)
         
