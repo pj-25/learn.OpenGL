@@ -14,7 +14,7 @@ class Geometry(object):
         self.vertexCount = len( attrib.data )
 
     # transform the data in an attribute using a matrix 
-    def applyMatrix(self, matrix, varName="vertexPos"):
+    def applyMatrix(self, matrix, varName="position"):
         oldPositionData = self.attributes[varName].data 
         newPositionData = []
         for oldPos in oldPositionData: 
