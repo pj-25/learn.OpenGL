@@ -27,5 +27,7 @@ class UniformVar:
             glUniform3f(self.varRef, self.data[0], self.data[1], self.data[2])
         elif self.dataType == 'vec4':
             glUniform4f(self.varRef, self.data[0], self.data[1], self.data[2], self.data[3])
+        elif self.dataType == "mat4": 
+            glUniformMatrix4fv(self.varRef, 1, GL_TRUE, self.data)
         else:
             raise Exception('Invalid datatype({0}) for uniform variable({1})'.format(self.dataType, self.varName))
