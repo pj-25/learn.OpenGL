@@ -43,13 +43,21 @@ class TestApp(BaseApp):
         self.uniTranslation = UniformVar('vec3', translationData)
         self.uniTranslation.setVariableReference(self.programRef, 'translation')
 
+        self.speed = 0.75
+
         print('System Info:', OpenGLUtils.getSystemInfo())
 
 
     def update(self):
-        # x=rcos(t)+a, y=rsin(t)+b
-        self.uniTranslation.data[0] = 0.75 * cos(self.timeElapsed)
-        self.uniTranslation.data[1] = 0.75 * sin(self.timeElapsed)
+        distance = self.speed * self.deltaTime 
+        if self.inputHandler.isKeyPressed("left") or self.inputHandler.isKeyPressed("d"):
+            self.uniTranslation.data[0] -= distance 
+        if self.inputHandler.isKeyPressed("right") or self.inputHandler.isKeyPressed("a"):
+            self.uniTranslation.data[0] += distance 
+        if self.inputHandler.isKeyPressed("down") or self.inputHandler.isKeyPressed("s"):
+            self.uniTranslation.data[1] -= distance 
+        if self.inputHandler.isKeyPressed("up") or self.inputHandler.isKeyPressed("w"):
+            self.uniTranslation.data[1] += distance
         
         glClear(GL_COLOR_BUFFER_BIT)
         glUseProgram(self.programRef)
