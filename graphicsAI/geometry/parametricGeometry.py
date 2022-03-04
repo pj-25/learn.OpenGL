@@ -1,4 +1,4 @@
-from geometry.geometry import Geometry
+from graphicsAI.geometry.geometry import Geometry
 
 class ParametricGeometry(Geometry): 
     def __init__(self, uStart, uEnd, uResolution, vStart, vEnd, vResolution, surfaceFunction):

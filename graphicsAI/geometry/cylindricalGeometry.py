@@ -1,5 +1,5 @@
-from geometry.parametricGeometry import ParametricGeometry 
-from geometry.polygonGeometry import PolygonGeometry
+from graphicsAI.geometry.parametricGeometry import ParametricGeometry 
+from graphicsAI.geometry.polygonGeometry import PolygonGeometry
 from math import sin, cos, pi
 
 from graphicsAI.base.matrix import Matrix

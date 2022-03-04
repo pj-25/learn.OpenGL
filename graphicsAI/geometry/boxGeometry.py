@@ -1,4 +1,4 @@
-from geometry.geometry import Geometry
+from graphicsAI.geometry.geometry import Geometry
 
 class BoxGeometry(Geometry):
     def __init__(self, width=1, height=1, depth=1): 

@@ -1,4 +1,4 @@
-from geometry.parametricGeometry import ParametricGeometry
+from graphicsAI.geometry.parametricGeometry import ParametricGeometry
 
 class PlaneGeometry(ParametricGeometry):
     def __init__(self, width=1, height=1, widthSegments=8, heightSegments=8):

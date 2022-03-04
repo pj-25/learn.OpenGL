@@ -1,4 +1,4 @@
-from material.material import Material 
+from graphicsAI.material.material import Material 
 from graphicsAI.base.uniformVar import UniformVar
 
 class BasicMaterial(Material):

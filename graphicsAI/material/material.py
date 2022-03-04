@@ -5,7 +5,7 @@ from graphicsAI.base.uniformVar import UniformVar
 
 class Material(object):
     def __init__(self, vertexShaderCode, fragmentShaderCode):
-        self.programRef = OpenGLUtils. initializeProgram(vertexShaderCode, fragmentShaderCode)
+        self.programRef = OpenGLUtils. initProgram(vertexShaderCode, fragmentShaderCode)
         self.uniforms = {} 
         
         self.uniforms["modelMatrix"] = UniformVar("mat4", None) 

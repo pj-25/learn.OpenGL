@@ -1,4 +1,4 @@
-from material.basicMaterial import BasicMaterial 
+from graphicsAI.material.basicMaterial import BasicMaterial 
 from OpenGL.GL import *
 
 class LineMaterial(BasicMaterial):

@@ -1,4 +1,4 @@
-from geometry.geometry import Geometry
+from graphicsAI.geometry.geometry import Geometry
 
 class RectangleGeometry(Geometry):
     def __init__(self, width=1, height=1): 

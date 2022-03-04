@@ -1,4 +1,4 @@
-from geometry.parametricGeometry import ParametricGeometry 
+from graphicsAI.geometry.parametricGeometry import ParametricGeometry 
 from math import sin, cos, pi
 
 class EllipsoidGeometry(ParametricGeometry):

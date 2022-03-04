@@ -1,4 +1,4 @@
-from geometry.geometry import Geometry 
+from graphicsAI.geometry.geometry import Geometry 
 from math import sin, cos, pi
 
 class PolygonGeometry(Geometry):
