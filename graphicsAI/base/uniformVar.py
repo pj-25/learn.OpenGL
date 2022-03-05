@@ -1,4 +1,3 @@
-from pyclbr import Function
 from OpenGL.GL import *
 
 class UniformVar:

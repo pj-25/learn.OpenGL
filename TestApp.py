@@ -22,11 +22,10 @@ class TestApp(BaseApp):
         fragmentShaderRef = OpenGLUtils.initShader(fragmentShaderSource, GL_FRAGMENT_SHADER)
         self.programRef = OpenGLUtils.initProgram(vertexShaderRef, fragmentShaderRef)
 
-        vaoRef = glGenVertexArrays(1)
-        glBindVertexArray(vaoRef)
+        #vaoRef = glGenVertexArrays(1)
+        #glBindVertexArray(vaoRef)
     
         glClearColor(0.0,0.0,0.0,1.0)
-
         glPointSize(30)
         glLineWidth(10)
 
@@ -63,6 +62,10 @@ class TestApp(BaseApp):
         self.uniTranslation.uploadData()
 
         glDrawArrays(GL_POINTS, 0, 1)
+        if(self.inputHandler.hasEventOccurred):
+            print('pressed keys:', self.inputHandler.pressedKeys)
+            print('up keys:', self.inputHandler.upKeys)
+            print('down keys:', self.inputHandler.downKeys)
         
 
         

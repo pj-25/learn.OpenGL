@@ -11,9 +11,9 @@ class Attribute:
         self.uploadDataToBuffer()
 
     def uploadDataToBuffer(self):
-        data = numpy.array(self.data).astype(numpy.float32)
+        data = numpy.array(self.data).astype(numpy.float32).ravel()
         glBindBuffer(GL_ARRAY_BUFFER, self.bufferRef)
-        glBufferData(GL_ARRAY_BUFFER, data.ravel(), GL_STATIC_DRAW)
+        glBufferData(GL_ARRAY_BUFFER, data, GL_STATIC_DRAW)
         
     def associateVariable(self, progRef, varName):
         variableRef = glGetAttribLocation(progRef, varName)
