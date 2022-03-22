@@ -1,7 +1,6 @@
-from turtle import speed
 from graphicsAI.base.baseApp import BaseApp
-from graphicsAI.base.openGLUtils import OpenGLUtils
 from OpenGL.GL import *
+from graphicsAI.base.openGLUtils import OpenGLUtils
 from graphicsAI.base.attribute import Attribute
 from graphicsAI.base.uniformVar import UniformVar
 
@@ -39,7 +38,7 @@ class TestApp(BaseApp):
 
         translationData = [0.0, 0.0, 0.0]
         self.uniTranslation = UniformVar('vec3', translationData)
-        self.uniTranslation.setVariableReference(self.programRef, 'translation')
+        self.uniTranslation.associateVariableReference(self.programRef, 'translation')
 
         print('System Info:', OpenGLUtils.getSystemInfo())
 
@@ -66,8 +65,6 @@ class TestApp(BaseApp):
             print('pressed keys:', self.inputHandler.pressedKeys)
             print('up keys:', self.inputHandler.upKeys)
             print('down keys:', self.inputHandler.downKeys)
-        
-
         
 
 TestApp('Test App').run()
