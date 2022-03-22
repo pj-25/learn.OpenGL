@@ -1,2 +1,2 @@
-# 🤖 graphicsAI
-AI powered real-time graphics synthesizer
+# 🏗️ Learn.OpenGL
+Exploring OpenGL
